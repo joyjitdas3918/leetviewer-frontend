@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #00ff00;
+  --secondary-color: #3498db; 
+  --bg-color: #181818; 
+  --text-color: #fff;
+  --border-color: rgba(0, 255, 255, 0.2);
+  --shadow-color: rgba(0, 255, 255, 0.2);
+
+  --font-size-base: 16px; /* Base font size */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; 
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem; 
+}
+
+h1 {
+  font-size: 2rem; /* 32px */
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--border-color); 
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+label {
+  margin-bottom: 0.5rem; 
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem; 
+  border: none;
+  border-radius: 3px; 
+  background-color: rgba(0, 255, 255, 0.1);
+  color: inherit; 
+  box-shadow: 0 0 5px var(--shadow-color); 
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem; 
+  background-color: var(--primary-color); 
+  color: #000;
+  border: none;
+  border-radius: 3px; 
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: limegreen;
+}
+
+h3 {
+  margin-top: 1rem; 
+  color: var(--primary-color); 
+}
+
+.review-section,
+.summary-container,
+.chart-container {
+  background-color: rgba(0, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--shadow-color); 
+  margin-bottom: 1rem;
+}
+
+.review-content {
+  color: var(--text-color); 
+  background-color: rgba(0, 0, 0, 0.1); 
+  padding: 1rem;
+  border-radius: 3px; 
+  margin-bottom: 1rem; 
+}
+
+.chart-container {
+  width: 60rem; /* 960px */
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid var(--secondary-color); 
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) { 
+  .App {
+    padding: 1rem; 
+  }
+
+  .chart-container {
+    width: 100%; 
+    max-width: 30rem; /* 480px */
+  }
+
+  .review-section,
+  .summary-container {
+    width: 100%; 
+    max-width: 30rem; /* 480px */
+  }
+
+  .input-container {
+    width: 100%; 
+    max-width: 30rem; /* 480px */
+  }
+}
+
+@media (max-width: 576px) {
+  .chart-container {
+    max-width: 25rem; /* 400px */
+  }
+}
