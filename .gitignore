@@ -62,7 +62,6 @@ yarn.lock
 dist/
 build/
 out/
-public/
 
 # old editor files
 *.orig
